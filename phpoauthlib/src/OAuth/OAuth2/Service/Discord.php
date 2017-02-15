@@ -17,8 +17,6 @@ class Discord extends AbstractService
     const SCOPE_CONNECTIONS = 'connections';
     const SCOPE_IDENTIFY = 'identify';
     const SCOPE_GUILDS = 'guilds';
-    
-    protected $authorizationEndpoint = new Uri('https://discordapp.com/api/oauth2/authorize');
 
     protected $accessTokenEndpoint = new Uri('https://discordapp.com/api/oauth2/token');
 
@@ -27,22 +25,7 @@ class Discord extends AbstractService
      */
     public function getAuthorizationEndpoint()
     {
-        if(is_null($this->authorizationEndpoint)) {
-            throw new InvalidServiceConfigurationException('No AuthorizationEndpoint set');
-        }
-        return $this->authorizationEndpoint;
-    }
-
-    /**
-     * Set the authorization endpoint.
-     *
-     * has to be called before using the service
-     *
-     * @param $url
-     */
-    public function setAuthorizationEndpoint($url)
-    {
-        $this->authorizationEndpoint = new Uri($url);
+        return new Uri('https://discordapp.com/api/oauth2/authorize');
     }
 
     /**
@@ -50,22 +33,7 @@ class Discord extends AbstractService
      */
     public function getAccessTokenEndpoint()
     {
-        if(is_null($this->accessTokenEndpoint)) {
-            throw new InvalidServiceConfigurationException('No AccessTokenEndpoint set');
-        }
-        return $this->accessTokenEndpoint;
-    }
-
-    /**
-     * Set the access token endpoint.
-     *
-     * has to be called before using the service
-     *
-     * @param $url
-     */
-    public function setAccessTokenEndpoint($url)
-    {
-        $this->accessTokenEndpoint = new Uri($url);
+        return new Uri('https://discordapp.com/api/oauth2/token');
     }
 
     /**
