@@ -42,7 +42,7 @@ class DiscordAdapter extends AbstractAdapter {
 
         $data['mail'] = $guild_user_result['user']['email'];
 
-        $data['grps'] = $guild_user_result['roles']
+        $data['grps'] = $guild_user_result['roles'];
 
         return $data;
     }
