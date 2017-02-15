@@ -1,4 +1,4 @@
-base   oauth2
+base   oauth
 author Andreas Gohr
 email  a@example.com
 date   2017-02-15
