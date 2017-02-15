@@ -56,5 +56,14 @@ class DiscordAdapter extends AbstractAdapter {
     public function getServiceName() {
         return 'Generic';
     }
+    
+    /**
+     * Access to user, email addresses, and guilds
+     *
+     * @return array
+     */
+    public function getScope() {
+        return array('email', 'guilds');
+    }
 
 }
