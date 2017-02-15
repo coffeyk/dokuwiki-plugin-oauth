@@ -37,8 +37,6 @@ class DiscordAdapter extends AbstractAdapter {
         $user_result = $JSON->decode($this->oAuth->request('/users/@me'));
         $user_guild_result = $JSON->decode($this->oAuth->request('/users/@me/guilds/'));
 
-        msg($this->oAuth->request('/users/@me'));
-
         $data['user'] = 'discord-'.$user_result['id'];
         // if (count($guild_user_result['nick']) > 0) {
         //     $data['name'] = $guild_user_result['nick'];
@@ -50,7 +48,8 @@ class DiscordAdapter extends AbstractAdapter {
         $data['mail'] = $user_result['email'];
 
         foreach ($user_guild_result as $guild){
-            if ($guild['id'] == '225596062302208000') {
+            msg($guild);
+            if ($guild['id'] === '225596062302208000') {
                 $data['grps'] = 'filthy';
             }
         }
