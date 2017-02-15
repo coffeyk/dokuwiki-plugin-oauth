@@ -13,7 +13,11 @@ use OAuth\Common\Http\Uri\UriInterface;
 
 class Discord extends AbstractService
 {
-
+    const SCOPE_EMAIL = 'email';
+    const SCOPE_CONNECTIONS = 'connections';
+    const SCOPE_IDENTIFY = 'identify';
+    const SCOPE_GUILDS = 'guilds';
+    
     protected $authorizationEndpoint = null;
 
     protected $accessTokenEndpoint = null;
