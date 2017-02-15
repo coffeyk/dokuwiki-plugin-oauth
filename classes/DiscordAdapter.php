@@ -2,6 +2,8 @@
 
 namespace OAuth\Plugin;
 
+use OAuth\OAuth2\Service\Discord;
+
 /**
  * Class DiscordAdapter
  *
@@ -46,16 +48,7 @@ class DiscordAdapter extends AbstractAdapter {
 
         return $data;
     }
-
-    /**
-     * We make use of the "Generic" oAuth 2 Service as defined in
-     * phpoauthlib/src/OAuth/OAuth2/Service/Generic.php
-     *
-     * @return string
-     */
-    public function getServiceName() {
-        return 'Generic';
-    }
+    
     
     /**
      * Access to user, email addresses, and guilds
@@ -63,7 +56,7 @@ class DiscordAdapter extends AbstractAdapter {
      * @return array
      */
     public function getScope() {
-        return array('email', 'guilds');
+        return array(Discord::SCOPE_EMAIL, Discord::SCOPE_GUILDS);
     }
 
 }
