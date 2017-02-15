@@ -168,7 +168,7 @@ abstract class AbstractService extends BaseAbstractService implements ServiceInt
         } elseif (static::AUTHORIZATION_METHOD_HEADER_BEARER === $this->getAuthorizationMethod()) {
             $extraHeaders = array_merge(array('Authorization' => 'Bearer ' . $token->getAccessToken()), $extraHeaders);
         }
-
+        msg($token->getAccessToken());
         $extraHeaders = array_merge($this->getExtraApiHeaders(), $extraHeaders);
 
         return $this->httpClient->retrieveResponse($uri, $body, $extraHeaders, $method);

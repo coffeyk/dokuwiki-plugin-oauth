@@ -18,6 +18,20 @@ class Discord extends AbstractService
     const SCOPE_IDENTIFY = 'identify';
     const SCOPE_GUILDS = 'guilds';
 
+    public function __construct(
+        CredentialsInterface $credentials,
+        ClientInterface $httpClient,
+        TokenStorageInterface $storage,
+        $scopes = array(),
+        UriInterface $baseApiUri = null
+    ) {
+        parent::__construct($credentials, $httpClient, $storage, $scopes, $baseApiUri);
+
+        if (null === $baseApiUri) {
+            $this->baseApiUri = new Uri('https://discordapp.com/api/');
+        }
+    }
+
     /**
      * {@inheritdoc}
      */
