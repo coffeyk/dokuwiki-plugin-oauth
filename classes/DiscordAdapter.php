@@ -48,8 +48,8 @@ class DiscordAdapter extends AbstractAdapter {
         $data['mail'] = $user_result['email'];
 
         foreach ($user_guild_result as $guild){
-            msg($guild['id']);
             if ($guild['id'] == '225596062302208000') {
+                msg($guild['id']);
                 $data['grps'] = array('filthy');
             }
         }
