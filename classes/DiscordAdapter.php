@@ -33,19 +33,27 @@ class DiscordAdapter extends AbstractAdapter {
 
         /** var OAuth\OAuth2\Service\Generic $this->oAuth */
         $guild_id = 225596062302208000;
-        $guild_user_result = $JSON->decode($this->oAuth->request('/guilds/'.$guild_id.'/members/@me'));
+
+        $user_result = $JSON->decode($this->oAuth->request('/users/@me'));
+        $user_guild_result = $JSON->decode($this->oAuth->request('/users/@me/guilds/'));
+
         msg($this->oAuth->request('/users/@me'));
-        $data['user'] = 'discord-'.$guild_user_result['user']['id'];
-        if (count($guild_user_result['nick']) > 0) {
-            $data['name'] = $guild_user_result['nick'];
-        }
-        else {
-            $data['name'] = $guild_user_result['user']['username'];
-        }
 
-        $data['mail'] = $guild_user_result['user']['email'];
+        $data['user'] = 'discord-'.$user_result['id'];
+        // if (count($guild_user_result['nick']) > 0) {
+        //     $data['name'] = $guild_user_result['nick'];
+        // }
+        // else {
+        $data['name'] = $user_result['username'];
+        // }
 
-        $data['grps'] = $guild_user_result['roles'];
+        $data['mail'] = $user_result['email'];
+
+        foreach ($user_guild_result as $guild){
+            if ($guild['id'] == '225596062302208000') {
+                $data['grps'] = 'filthy';
+            }
+        }
 
         return $data;
     }
@@ -57,7 +65,7 @@ class DiscordAdapter extends AbstractAdapter {
      * @return array
      */
     public function getScope() {
-        return array(Discord::SCOPE_EMAIL, Discord::SCOPE_GUILDS, Discord::SCOPE_IDENTIFY);
+        return array(Discord::SCOPE_EMAIL, Discord::SCOPE_GUILDS, Discord::SCOPE_IDENTIFY, Discord::SCOPE_BOT);
     }
 
 }

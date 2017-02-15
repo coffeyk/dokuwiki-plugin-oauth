@@ -17,6 +17,7 @@ class Discord extends AbstractService
     const SCOPE_CONNECTIONS = 'connections';
     const SCOPE_IDENTIFY = 'identify';
     const SCOPE_GUILDS = 'guilds';
+    const SCOPE_BOT = 'bot';
 
     public function __construct(
         CredentialsInterface $credentials,
