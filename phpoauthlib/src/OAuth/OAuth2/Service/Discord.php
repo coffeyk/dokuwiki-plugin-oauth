@@ -63,7 +63,7 @@ class Discord extends AbstractService
     protected function parseAccessTokenResponse($responseBody)
     {
         $data = json_decode($responseBody, true);
-        msg($responseBody);
+
         if (null === $data || !is_array($data)) {
             throw new TokenResponseException('Unable to parse response.');
         } elseif (isset($data['error'])) {

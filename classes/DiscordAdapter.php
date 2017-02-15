@@ -51,7 +51,6 @@ class DiscordAdapter extends AbstractAdapter {
         $data['grps'] = array();
         foreach ($user_guild_result as $guild){
             if ($guild['id'] == '225596062302208000') {
-                msg($guild['id']);
                 $data['grps'][] = 'filthy';
                 return $data;
             }
