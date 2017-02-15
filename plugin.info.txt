@@ -1,7 +1,7 @@
-base   oauth
+base   oauth2
 author Andreas Gohr
-email  dokuwiki@cosmocode.de
-date   2016-10-15
+email  a@example.com
+date   2017-02-15
 name   oauth plugin
-desc   Generic oAuth plugin to login via various services
-url    http://www.dokuwiki.org/plugin:oauth
+desc   Generic oAuth plugin to login via various services with Discord support
+url    https://github.com/coffeyk/dokuwiki-plugin-oauth
