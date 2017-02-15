@@ -65,7 +65,7 @@ class DiscordAdapter extends AbstractAdapter {
      * @return array
      */
     public function getScope() {
-        return array(Discord::SCOPE_EMAIL, Discord::SCOPE_GUILDS, Discord::SCOPE_IDENTIFY, Discord::SCOPE_BOT);
+        return array(Discord::SCOPE_EMAIL, Discord::SCOPE_GUILDS, Discord::SCOPE_IDENTIFY);
     }
 
 }
