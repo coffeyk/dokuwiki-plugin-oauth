@@ -88,4 +88,12 @@ class Discord extends AbstractService
 
         return $token;
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function getExtraApiHeaders()
+    {
+        return array('User-Agent' => 'DiscordBot (https://github.com/coffeyk/dokuwiki-plugin-oauth, 0)');
+    }
 }
