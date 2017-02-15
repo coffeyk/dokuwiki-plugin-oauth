@@ -32,5 +32,3 @@ $conf['mailRestriction']     = '';
 $conf['singleService']       = '';
 $conf['discord-key']      = '';
 $conf['discord-secret']   = '';
-$conf['discord-authurl']  = 'https://discordapp.com/api/oauth2/authorize';
-$conf['discord-tokenurl'] = 'https://discordapp.com/api/oauth2/token';

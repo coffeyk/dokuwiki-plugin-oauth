@@ -64,4 +64,5 @@ $meta['singleService']       = array('multichoice',
                                          'Github',
                                          'Yahoo',
                                          'Doorkeeper',
-                                         'Keycloak'));
+                                         'Keycloak',
+                                         'Discord'));
