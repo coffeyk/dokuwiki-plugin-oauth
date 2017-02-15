@@ -17,7 +17,7 @@ class Discord extends AbstractService
     const SCOPE_CONNECTIONS = 'connections';
     const SCOPE_IDENTIFY = 'identify';
     const SCOPE_GUILDS = 'guilds';
-    
+
     /**
      * {@inheritdoc}
      */
@@ -58,8 +58,8 @@ class Discord extends AbstractService
         $token = new StdOAuth2Token();
         $token->setAccessToken($data['access_token']);
 
-        if (isset($data['expires'])) {
-            $token->setLifeTime($data['expires']);
+        if (isset($data['expires_in'])) {
+            $token->setLifeTime($data['expires_in']);
         }
 
         if (isset($data['refresh_token'])) {
