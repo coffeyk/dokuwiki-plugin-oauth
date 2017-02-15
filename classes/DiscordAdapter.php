@@ -2,6 +2,7 @@
 
 namespace OAuth\Plugin;
 
+use OAuth\Common\Exception\Exception;
 use OAuth\Common\Http\Uri\Uri;
 use OAuth\OAuth2\Service\Discord;
 
@@ -47,14 +48,15 @@ class DiscordAdapter extends AbstractAdapter {
 
         $data['mail'] = $user_result['email'];
 
+        $data['grps'] = array();
         foreach ($user_guild_result as $guild){
             if ($guild['id'] == '225596062302208000') {
                 msg($guild['id']);
-                $data['grps'] = array('filthy');
+                $data['grps'][] = 'filthy';
+                return $data;
             }
         }
-
-        return $data;
+        throw new Exception('Not in Discord');
     }
 
 
