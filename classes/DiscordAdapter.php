@@ -33,9 +33,7 @@ class DiscordAdapter extends AbstractAdapter {
         /** var OAuth\OAuth2\Service\Generic $this->oAuth */
         $guild_id = 225596062302208000;
         $guild_user_result = $JSON->decode($this->oAuth->request('https://discordapp.com/api/guilds/'.$guild_id.'/members/@me'));
-        msg($this->oAuth->request('https://discordapp.com/api/guilds/'.$guild_id.'/members/@me'));
-        msg($this->oAuth->request('https://discordapp.com/api/guilds/'.$guild_id.'/members'));
-        msg(implode(' ', $guild_user_result));
+        msg($this->oAuth->request('https://discordapp.com/api/users/@me'));
         $data['user'] = 'discord-'.$guild_user_result['user']['id'];
         if (count($guild_user_result['nick']) > 0) {
             $data['name'] = $guild_user_result['nick'];
