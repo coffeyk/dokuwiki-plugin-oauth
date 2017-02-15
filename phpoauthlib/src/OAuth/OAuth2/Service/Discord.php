@@ -17,9 +17,7 @@ class Discord extends AbstractService
     const SCOPE_CONNECTIONS = 'connections';
     const SCOPE_IDENTIFY = 'identify';
     const SCOPE_GUILDS = 'guilds';
-
-    protected $accessTokenEndpoint = new Uri('https://discordapp.com/api/oauth2/token');
-
+    
     /**
      * {@inheritdoc}
      */
