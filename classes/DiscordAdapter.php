@@ -2,6 +2,7 @@
 
 namespace OAuth\Plugin;
 
+use OAuth\Common\Http\Uri\Uri;
 use OAuth\OAuth2\Service\Discord;
 
 /**
